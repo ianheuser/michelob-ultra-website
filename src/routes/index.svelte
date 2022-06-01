@@ -9,8 +9,8 @@
 	import { page } from '$app/stores';
 	import * as BuilderSDK from '@builder.io/sdk-svelte';
 	// TODO: enter your public API key
-	/* const BUILDER_PUBLIC_API_KEY = '87eb56a463224e9abd7f09701429c87d'; */ // ggignore
-	 const BUILDER_PUBLIC_API_KEY = '6701fef5b5444bf2a8a9e84e081c270f'; // Emrah's Test Space 
+	//const BUILDER_PUBLIC_API_KEY = '87eb56a463224e9abd7f09701429c87d';  // ggignore
+	const BUILDER_PUBLIC_API_KEY = '1535c91332ea4270b0feb462e9308afe'; // Emrah's Test Space 
 	let content = undefined;
 	let canShowContent = false;
 	const fetch = async () => {
@@ -25,9 +25,10 @@
 		});
 		canShowContent = content || BuilderSDK.isEditing();
 	};
+
 	BuilderSDK.registerComponent(Supdawg, 
 		{ 	
-			name: "Sup Dawg",
+			name: "Supdawg",
 			inputs: 
 				[
 					{
@@ -42,7 +43,6 @@
 					}
 				]
 		});
-	fetch();
 
 	BuilderSDK.registerComponent(Banner, 
 		{ 	

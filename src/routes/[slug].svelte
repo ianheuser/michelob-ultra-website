@@ -9,7 +9,7 @@
 	import { page } from '$app/stores';
 	import * as BuilderSDK from '@builder.io/sdk-svelte';
 	// TODO: enter your public API key
-	const BUILDER_PUBLIC_API_KEY = '87eb56a463224e9abd7f09701429c87d'; // ggignore
+	const BUILDER_PUBLIC_API_KEY = '1535c91332ea4270b0feb462e9308afe'; // ggignore
 	let content = undefined;
 	let canShowContent = false;
 	const fetch = async () => {
@@ -24,9 +24,10 @@
 		});
 		canShowContent = content || BuilderSDK.isEditing();
 	};
+	
 	BuilderSDK.registerComponent(Supdawg, 
 		{ 	
-			name: "Sup Dawg",
+			name: "Supdawg",
 			inputs: 
 				[
 					{
@@ -41,7 +42,6 @@
 					}
 				]
 		});
-	fetch();
 
 	BuilderSDK.registerComponent(Banner, 
 		{ 	
@@ -66,9 +66,10 @@
 						name: 'image',
 						type: 'file', 
 						allowedFileTypes: ['jpeg', 'png'] 
-  }
+					}
 				]
 		});
+
 	fetch();
 
 
@@ -78,7 +79,23 @@
 <h1>Michelob Ultra Test Page</h1>
 <section>
 	<div>page: {(content && content.data && content.data.title) || 'Unpublished'}</div>
-	<BuilderSDK.RenderContent model="page" {content} api-key={BUILDER_PUBLIC_API_KEY} />
+	<BuilderSDK.RenderContent model="page" {content} api-key={BUILDER_PUBLIC_API_KEY} customComponents=(Supdawg, 
+	{ 	
+		name: "Sup Dawg",
+		inputs: 
+			[
+				{
+					name: "inputText",
+					type: "string",
+					defaultValue: "What is Supdawg?",
+				},
+				{
+					name: "language",
+					type: "string",
+					defaultValue: "javascript",
+				}
+			]
+	}) />
 </section>
 
 
