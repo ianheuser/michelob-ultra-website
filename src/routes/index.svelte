@@ -9,7 +9,8 @@
 	import { page } from '$app/stores';
 	import * as BuilderSDK from '@builder.io/sdk-svelte';
 	// TODO: enter your public API key
-	const BUILDER_PUBLIC_API_KEY = '87eb56a463224e9abd7f09701429c87d'; // ggignore
+	/* const BUILDER_PUBLIC_API_KEY = '87eb56a463224e9abd7f09701429c87d'; */ // ggignore
+	 const BUILDER_PUBLIC_API_KEY = '6701fef5b5444bf2a8a9e84e081c270f'; // Emrah's Test Space 
 	let content = undefined;
 	let canShowContent = false;
 	const fetch = async () => {
@@ -75,7 +76,7 @@
 
 <section>
 	<div>page: {(content && content.data && content.data.title) || 'Unpublished'}</div>
-	<BuilderSDK.RenderContent model="page" {content} api-key={BUILDER_PUBLIC_API_KEY} />
+	<BuilderSDK.RenderContent model="page" content={content} api-key={BUILDER_PUBLIC_API_KEY} />
 </section>
 
 

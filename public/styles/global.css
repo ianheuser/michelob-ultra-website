@@ -2,7 +2,7 @@
 		
     /*Primary Michelob Colors*/
     --michelob-red: #C8102E;
-    --reflex-blue: #001498;
+    --reflex-blue: #001063;
     --logo-blue: #001689;
     --light-gray: #F2F5F7; 
     --cool-gray: #898A8D; /* Cool Gray */
@@ -73,7 +73,7 @@ label {
     font-weight: bold;
 }
 
-.navbar {
+#navbar {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -122,17 +122,19 @@ i {
     padding: 18px 30px;
 }
 
-.megaHider {
+#megaHider {
     display: none;
     z-index: 40;
 }
 
-.megaHider:target {
+#megaHider:target {
     display: block;
+    background-color: white;
+    box-shadow: 2px 2px 3px 0px rgb(0 0 0 / 15%);
 }
 
-.menuSection h5 {
-    font-weight: 300;
+h5.navHeading {
+    font-weight: 100;
     color: var(--reflex-blue);
     border-bottom: 2.5px solid var(--michelob-red);
     text-transform: uppercase;
@@ -140,18 +142,39 @@ i {
     margin-bottom: 13px;
 }
 
+
+
 .menuSection li, .menuSection li a {
     padding: 5px 0px;
     color: #747474;
 }
 
-.menuAdSection {
+.menuAd {
     background-image: url('../img/navImage.png');
     display: flex;
     flex-direction: column;
     background-repeat: no-repeat;
     align-items: center;
-    width: 350px;
+    width: 300px;
+    min-width: 300px;
+    height: 300px;
+    min-height: 300px;
+}
+
+.ad {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h5.blue{
+    color: var(--reflex-blue);
+    text-align: center;
+}
+
+.ad h5{
+    text-align: center;
 }
 
 .sub-nav li {
@@ -163,15 +186,63 @@ i {
     font-weight: bold;
 }
 
+
+a.button {
+    padding: 10px;
+    text-align: center;
+}
+
 a.red.button {
     background-color: var(--michelob-red);
     color: white;
-    padding: 10px;
 }
 
-h5.red {
-    color: var(--michelob-red);
+.footer {
+    background-color: var(--reflex-blue);
+    display: flex;
+    flex-direction: column;
+    color: white;
+    justify-content: space-between;
+    padding: 30px;
 }
+
+.row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.footer b {
+    font-style: normal;
+    font-weight: 800;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.footer p, .footer a {
+    font-style: normal;
+    font-weight: 100;
+    font-size: 18px;
+    font-size: 18px;
+    color: white;
+}
+
+a.white.inverted  {
+    color: white;
+    background-color: transparent;
+}
+
+label {
+    font-size: 18px;
+    font-weight: bold;
+}
+
 
 .builder-columns {
     gap: 20px;

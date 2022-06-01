@@ -6,12 +6,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script src="https://kit.fontawesome.com/9d6bfaf705.js" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="./styles/global.css" />
+
 </head>
 
 <body>
 
 	<div class="header">
-		<div class="navbar">
+		<div id="navbar">
 			<img class="logo" src="img/logo.png" alt="Michelob Ultra Logo" />
 			<div class="nav">
 				<a href="#megaHider"><i class="fa-regular fa-bars"></i>Main Menu</a>
@@ -23,7 +24,7 @@
         <div id="megaHider">
             <div class="mega">
                 <div class="menuSection">
-                    <h5>Our Beers</h5>
+                    <h5 class="navHeading">Our Beers</h5>
                     <ul>
                         <li>
                             <b>Beers</b>
@@ -49,7 +50,7 @@
                     </ul>
                 </div>
                 <div class="menuSection">
-                    <h5>Our Seltzers</h5>
+                    <h5 class="navHeading">Our Seltzers</h5>
                     <ul>
                         <li>
                             <b>Seltzers</b>
@@ -99,7 +100,7 @@
                     </ul>
                 </div>
                 <div class="menuSection">
-                    <h5>Campaigns</h5>
+                    <h5 class="navHeading">Campaigns</h5>
                     <ul>
                         <li>
                             <a href='#'>Enjoy It Like It's 1993</a>
@@ -125,7 +126,7 @@
                     </ul>
                 </div>
                 <div class="menuSection">
-                    <h5>About Us</h5>
+                    <h5 class="navHeading">About Us</h5>
                     <ul>
                         <li>
                             <a href="#">Our Story</a>
@@ -146,17 +147,27 @@
                     </ul>
                 </div>
                 <div class="menuSection">
-                    <h5>Merch</h5>
+                    <h5 class="navHeading">Merch</h5>
                     <ul>
                         <li>
                             <a href="#">Buy Gear</a>
                         </li>
                     </ul>
                 </div>
-                <div class="menuAdSection">
-                    <h5 class="red">CHOOSE ORGANIC.<br />
-                        WIN REWARDS.</h5>
-                    <a href="#" class="red button">Sign Up</a>
+                <div class="menuSection">
+                    <div class="menuAd">
+                        <div class="ad">
+                            <h5 class="blue">CHOOSE ORGANIC.<br />
+                                WIN REWARDS.</h5>
+                            <a href="#" class="red button">Sign Up</a>
+                        </div>
+                    </div>
+                    <div class="social">
+                        <a href="#"><i class="fa fa-regular fa-facebook"></i></a>
+                        <a href="#"><i class="fa fa-regular fa-twitter"></i></a>
+                        <a href="#"><i class="fa fa-regular fa-instagram"></i></a>
+                        <a href="#"><i class="fa fa-regular fa-youtube"></i></a>
+                    </div>
                 </div>
             </div> 
         </div>
@@ -165,7 +176,59 @@
 	<slot></slot>
 
 	<div class="footer">
-		<h2>Footer</h2>
+		<div class="row">
+            <div class="column">
+                <b>Anheuser Busch</b>
+                <ul>
+                    <li>About Anheuser Busch</li>
+                    <li>Careers</li>
+                    <li>Social Responsibility</li>
+                    <li>Press</li>
+                </ul>
+            </div>
+            <div class="column">
+                <b>Support</b>
+                <ul>
+                    <li>FAQ</li>
+                    <li>Contact Us</li>
+                    <li>Consumer Information</li>
+                    <li>Accessibility Statement</li>
+                </ul>
+            </div>
+            <div class="column">
+                <b>STAY CONNECTED</b>
+                <p>
+                    Subscribe now to earn 10 MyCooler reward points!
+                </p>
+                <a href="#" class="button inverted white">Join Newsletter</a>
+            </div>
+            <div class="column">
+                <img src="./img/stackLogo.png" alt="Stack Logo" />
+                <div class="social">
+                    <a href="#"><i class="fa fa-regular fa-facebook"></i></a>
+                    <a href="#"><i class="fa fa-regular fa-twitter"></i></a>
+                    <a href="#"><i class="fa fa-regular fa-instagram"></i></a>
+                    <a href="#"><i class="fa fa-regular fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="column">
+                Always enjoy responsibly. Do not share this content with minors. © 2021 Anheuser-Busch InBev Michelob ULTRA ® Beer, St. Louis, MO. 
+            </div>
+            <div class="column">
+                <div class="row">
+                    <a href="#">Terms & Conditions</a>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Do Not Sell My Personal Information</a>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <p>
+                Anheuser-Busch is committed to improving the accessibility of our websites for all users, including those with disabilities.Read our accessibility statement here.
+            </p>
+        </div>
 	</div>
 
 	</body>
