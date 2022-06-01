@@ -74,10 +74,18 @@
 
 </script>
 
-<section>
-	<div>page: {(content && content.data && content.data.title) || 'Unpublished'}</div>
-	<BuilderSDK.RenderContent model="page" content={content} api-key={BUILDER_PUBLIC_API_KEY} />
+<h5>This Layout is from the Index.Svelte file, since the relative url is '/' <br /> 
+	{'The title of this page in builder: ' + (content && content.data && content.data.title) || 'This page either does not exist or is currently unpublished'}
+</h5>
+
+<section class="builderZone">
+	<BuilderSDK.RenderContent model="page" {content} api-key={BUILDER_PUBLIC_API_KEY} />
 </section>
 
 
-
+<style>
+	.builderZone {
+		padding: 40px;
+		background-color: rgba(0,0,0, 0.05);
+	}
+</style>

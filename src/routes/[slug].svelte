@@ -24,7 +24,7 @@
 		});
 		canShowContent = content || BuilderSDK.isEditing();
 	};
-	
+
 	BuilderSDK.registerComponent(Supdawg, 
 		{ 	
 			name: "Supdawg",
@@ -76,27 +76,23 @@
 
 
 </script>
-<h1>Michelob Ultra Test Page</h1>
-<section>
-	<div>page: {(content && content.data && content.data.title) || 'Unpublished'}</div>
-	<BuilderSDK.RenderContent model="page" {content} api-key={BUILDER_PUBLIC_API_KEY} customComponents=(Supdawg, 
-	{ 	
-		name: "Sup Dawg",
-		inputs: 
-			[
-				{
-					name: "inputText",
-					type: "string",
-					defaultValue: "What is Supdawg?",
-				},
-				{
-					name: "language",
-					type: "string",
-					defaultValue: "javascript",
-				}
-			]
-	}) />
+
+<h5>This Layout is from the [slug].Svelte file, since the relative url is something other than '/' and there is no file matching the base url for this page.<br /> 
+	{'The title of this page in builder: ' + (content && content.data && content.data.title) || 'This page either does not exist or is currently unpublished'}
+</h5>
+
+<section class="builderZone">
+	<BuilderSDK.RenderContent model="page" {content} api-key={BUILDER_PUBLIC_API_KEY} />
 </section>
+
+
+<style>
+	.builderZone {
+		padding: 40px;
+		background-color: rgba(0,0,0, 0.05);
+	}
+</style>
+
 
 
 

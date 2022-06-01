@@ -25,6 +25,8 @@
     --dark-gray: #2c2c2c; 
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -73,6 +75,12 @@ label {
     font-weight: bold;
 }
 
+.header{
+    position:relative;
+    display: block;
+    z-index: 50;
+}
+
 #navbar {
     display: flex;
     flex-direction: row;
@@ -103,7 +111,7 @@ label {
     height: 50px;
 }
 
-i {
+.nav i {
     padding-left: 15px;
 }
 
@@ -120,17 +128,37 @@ i {
     flex-direction: row;
     justify-content: space-between;
     padding: 18px 30px;
+    gap: 25px;
 }
 
 #megaHider {
-    display: none;
-    z-index: 40;
+    height: fit-content;
+    max-height: 0%;
+    display:block;
+    padding-top:80px;
+
+    z-index: 10;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    overflow: hidden;
+    width: 100%;
+    background-color: white;
+    
+    transition: all 1.3s ease-out;
+
 }
 
 #megaHider:target {
-    display: block;
-    background-color: white;
+    top: 0px;
+    padding-top:80px;
+    position: absolute;
+    overflow: hidden;
+    height: fit-content;
+    max-height: 100%;
     box-shadow: 2px 2px 3px 0px rgb(0 0 0 / 15%);
+    transition: all 1.3s ease-in;
+    z-index:10;
 }
 
 h5.navHeading {
@@ -144,11 +172,30 @@ h5.navHeading {
 
 
 
+a.button {
+    padding: 10px;
+    text-align: center;
+    background-color: var(--michelob-blue);
+    color:white;
+}
+
+a.red.button {
+    background-color: var(--michelob-red);
+}
+
+a.inverted.button {
+    background-color: transparent;
+    color: white;
+    border: 1.5px solid white;
+}
+
 .menuSection li, .menuSection li a {
     padding: 5px 0px;
     color: #747474;
 }
-
+.column.gapUp {
+    gap: 20px;
+}
 .menuAd {
     background-image: url('../img/navImage.png');
     display: flex;
@@ -186,56 +233,71 @@ h5.blue{
     font-weight: bold;
 }
 
-
-a.button {
-    padding: 10px;
-    text-align: center;
-}
-
-a.red.button {
-    background-color: var(--michelob-red);
-    color: white;
-}
-
 .footer {
+    font-family: 'IBM Plex Sans','Ubuntu','Josefin Sans', sans-serif;
     background-color: var(--reflex-blue);
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     color: white;
     justify-content: space-between;
-    padding: 30px;
+    padding: 60px 13px 80px;
 }
+
+
+.footer b {
+    font-family: "Josefin Sans", sans-serif;
+    font-weight: 800;
+    font-size: 22px;
+    font-weight: bold;
+    
+}
+
+.footer p, .footer a , .footer li{
+    font-weight: 300;
+    font-size: 16px;
+    color: white;
+}
+
+
+.footer .circle i {
+    font-size: 30px;
+    color: var(--reflex-blue);
+    padding-left: 0x;
+}
+.stackLogo {
+    width: 175px;
+    height: 120px;
+}
+.circle{
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+}
+
+
 
 .row {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    padding-bottom: 15px;
 }
 
 .column {
     display: flex;
     flex-direction: column;
+    flex-grow: 1;
+    gap: 13px;
 }
 
-
-.footer b {
-    font-style: normal;
-    font-weight: 800;
-    font-size: 22px;
-    font-weight: bold;
-}
-
-.footer p, .footer a {
-    font-style: normal;
-    font-weight: 100;
-    font-size: 18px;
-    font-size: 18px;
-    color: white;
-}
-
-a.white.inverted  {
-    color: white;
-    background-color: transparent;
+.bottom {
+    justify-content: end;
+    padding: 0px 20px;
 }
 
 label {
@@ -243,6 +305,40 @@ label {
     font-weight: bold;
 }
 
+.mainSlot {
+    display: block;
+    width: 100%;
+    padding: 30px;
+    min-height: 300px;
+    z-index: 5
+}
+
+.topper {
+    border-top: white solid 1px;
+    padding-top: 20px;
+}
+
+.center {
+    align-items:center;
+}
+
+.social {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.social i {
+    font-size: 30px;
+    color: white;
+    padding-right: 10px;
+}
+
+.i {
+font-style: italic;
+font-size: 14px;
+}
 
 .builder-columns {
     gap: 20px;
