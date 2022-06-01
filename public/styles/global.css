@@ -1,0 +1,184 @@
+:root {
+		
+    /*Primary Michelob Colors*/
+    --michelob-red: #C8102E;
+    --reflex-blue: #001498;
+    --logo-blue: #001689;
+    --light-gray: #F2F5F7; 
+    --cool-gray: #898A8D; /* Cool Gray */
+
+    /*Secondary Michelob Colors*/
+    --pure-gold: #EAAA00;
+    --amber-max: #254A5D;
+    --prickly-pear: #84BD00;
+    --pomegranate: #C8102E;
+
+    /*Sletlzers */
+    --yellow: #F5CE3E; /* Spicy Pineapple */
+    --green: #3DAE2B; /* Cucumber Lime */
+    --pear: #FF9D6C; /* Peach Pear */
+    --citrus: #FFA400; /* Citrus */
+    --mixed-berry: #9D1D64; /* Mixed Berry */
+    --mango: #FF6B00; /* Mango Apricot */
+
+    /* arbitrarily  chosen by Ian (couldn't find an official grayscale) */
+    --dark-gray: #2c2c2c; 
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+body {
+    font-family: 'National', Arial, Helvetica, sans-serif;
+    margin: 0;
+}
+
+h1 {
+    font-size: 66px;
+    
+}
+
+h2 {
+    font-size: 50px;
+    
+}
+
+h3 {
+    font-size: 38px;
+    
+}
+
+h4 {
+    font-size: 32px;
+    
+}
+
+h5 {
+    font-size: 22px;
+    
+}
+
+p {
+    font-size: 18px;
+    color: var(--cool-gray);
+}
+
+label {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 75px;
+    max-height: 75px;
+    height: 75px;
+    background-color: white;
+    padding: 0px 30px;
+    box-shadow: 1px 1px 3px 0px rgb(0 0 0 / 15%);
+    z-index: 50;
+}
+
+.nav a i{
+    color: var(--michelob-red);
+    padding-right: 10px;
+}
+
+.nav a {
+    color: var(--reflex-blue);
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.logo {
+    width: 350px;
+    height: 50px;
+}
+
+i {
+    padding-left: 15px;
+}
+
+.en{
+    border-left: 1px solid var(--cool-gray);
+}
+
+.find {
+    padding-right: 10px;
+}
+
+.mega {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 18px 30px;
+}
+
+.megaHider {
+    display: none;
+    z-index: 40;
+}
+
+.megaHider:target {
+    display: block;
+}
+
+.menuSection h5 {
+    font-weight: 300;
+    color: var(--reflex-blue);
+    border-bottom: 2.5px solid var(--michelob-red);
+    text-transform: uppercase;
+    padding-bottom: 10px;
+    margin-bottom: 13px;
+}
+
+.menuSection li, .menuSection li a {
+    padding: 5px 0px;
+    color: #747474;
+}
+
+.menuAdSection {
+    background-image: url('../img/navImage.png');
+    display: flex;
+    flex-direction: column;
+    background-repeat: no-repeat;
+    align-items: center;
+    width: 350px;
+}
+
+.sub-nav li {
+    font-weight: 100;
+    
+}
+
+.em {
+    font-weight: bold;
+}
+
+a.red.button {
+    background-color: var(--michelob-red);
+    color: white;
+    padding: 10px;
+}
+
+h5.red {
+    color: var(--michelob-red);
+}
+
+.builder-columns {
+    gap: 20px;
+}
+
+@media (max-width: 768px) {
+    .builder-columns {
+        flex-direction: column !important;
+    }
+}
