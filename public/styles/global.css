@@ -32,7 +32,7 @@
     padding: 0;
     box-sizing: border-box;
     text-decoration: none;
-    list-style: none;
+    
 }
 
 body {
@@ -305,13 +305,14 @@ label {
     font-weight: bold;
 }
 
+/*
 .mainSlot {
     display: block;
     width: 100%;
     padding: 30px;
-    min-height: 300px;
+    min-height: 300px; 
     z-index: 5
-}
+} */
 
 .topper {
     border-top: white solid 1px;
@@ -348,4 +349,5 @@ font-size: 14px;
     .builder-columns {
         flex-direction: column !important;
     }
+
 }
