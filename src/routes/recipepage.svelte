@@ -60,14 +60,19 @@
     </ol>
 </div>
 
-
-
+<div class="imagebox">
+    <img src="img/ultra2.png" alt="" class="ultra1">
+    <img src="img/ultra3.png" alt="" class="ultra2">
+</div>
 </section>
 
 
 
 
 <style>
+    .main-content {
+        position: relative;
+    }
     .firstContent {
         width: 100%;
         height: 250px;
@@ -126,4 +131,23 @@
         padding-bottom: 10px;
         line-height: 1.5em;
     }
+
+
+   .imagebox {
+       position: absolute;
+       bottom: 0px;
+       right: 50px;
+       top: 50px;
+       display: flex;
+       flex-direction: column;
+       align-items: center;
+   } 
+    .ultra1 {
+        width: 300px;
+    }
+    .ultra2 {
+        width: 200px;
+    }
+
+    
 </style>
