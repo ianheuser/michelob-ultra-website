@@ -5,11 +5,15 @@ export const components = [
 	() => import("../runtime/components/error.svelte"),
 	() => import("../../src/routes/[slug].svelte"),
 	() => import("../../src/routes/index.svelte"),
+	() => import("../../src/routes/recipe.svelte"),
+	() => import("../../src/routes/recipepage.svelte"),
 	() => import("../../src/routes/recipes.svelte")
 ];
 
 export const dictionary = {
 	"": [[0, 3], [1]],
-	"recipes": [[0, 4], [1]],
+	"recipe": [[0, 4], [1]],
+	"recipepage": [[0, 5], [1]],
+	"recipes": [[0, 6], [1]],
 	"[slug]": [[0, 2], [1]]
 };
