@@ -5,7 +5,8 @@
 <h1>{inputText}</h1>
 
 <style>
-	strong {
+	h1 {
 		color: red;
 	}
+	
 </style>

@@ -6,12 +6,365 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		%svelte.head%
 		<script src="https://kit.fontawesome.com/9d6bfaf705.js" crossorigin="anonymous"></script>
-		<link rel="stylesheet" href="./styles/global.css" />
+		<!-- <link rel="stylesheet" href="./styles/global.css" /> -->
 
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;1,100;1,200;1,300&family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Ubuntu:ital,wght@1,300&display=swap" rel="stylesheet">
+		
+		<style>
+			:root {
+				/*Primary Michelob Colors*/
+				--michelob-red: #C8102E;
+				--reflex-blue: #001063;
+				--logo-blue: #001689;
+				--light-gray: #F2F5F7; 
+				--cool-gray: #898A8D; /* Cool Gray */
+			
+				/*Secondary Michelob Colors*/
+				--pure-gold: #EAAA00;
+				--amber-max: #254A5D;
+				--prickly-pear: #84BD00;
+				--pomegranate: #C8102E;
+			
+				/*Sletlzers */
+				--yellow: #F5CE3E; /* Spicy Pineapple */
+				--green: #3DAE2B; /* Cucumber Lime */
+				--pear: #FF9D6C; /* Peach Pear */
+				--citrus: #FFA400; /* Citrus */
+				--mixed-berry: #9D1D64; /* Mixed Berry */
+				--mango: #FF6B00; /* Mango Apricot */
+			
+				/* arbitrarily  chosen by Ian (couldn't find an official grayscale) */
+				--dark-gray: #2c2c2c; 
+			}
+			
+			@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+			
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+				text-decoration: none;
+				list-style: none;
+			}
+			
+			body {
+				font-family: 'National', Arial, Helvetica, sans-serif;
+				margin: 0;
+			}
+			
+			h1 {
+				font-size: 66px;
+				
+			}
+			
+			h2 {
+				font-size: 50px;
+				
+			}
+			
+			h3 {
+				font-size: 38px;
+				
+			}
+			
+			h4 {
+				font-size: 32px;
+				
+			}
+			
+			h5 {
+				font-size: 22px;
+				
+			}
+			
+			p {
+				font-size: 18px;
+				color: var(--cool-gray);
+			}
+			
+			label {
+				font-size: 18px;
+				font-weight: bold;
+			}
+			
+			.header{
+				position:relative;
+				display: block;
+				z-index: 50;
+			}
+			
+			#navbar {
+				display: flex;
+				flex-direction: row;
+				justify-content: space-between;
+				align-items: center;
+				min-height: 75px;
+				max-height: 75px;
+				height: 75px;
+				background-color: white;
+				padding: 0px 30px;
+				box-shadow: 1px 1px 3px 0px rgb(0 0 0 / 15%);
+				z-index: 50;
+			}
+			
+			.nav a i{
+				color: var(--michelob-red);
+				padding-right: 10px;
+			}
+			
+			.nav a {
+				color: var(--reflex-blue);
+				font-weight: bold;
+				text-transform: uppercase;
+			}
+			
+			.logo {
+				width: 350px;
+				height: 50px;
+			}
+			
+			.nav i {
+				padding-left: 15px;
+			}
+			
+			.en{
+				border-left: 1px solid var(--cool-gray);
+			}
+			
+			.find {
+				padding-right: 10px;
+			}
+			
+			.mega {
+				display: flex;
+				flex-direction: row;
+				justify-content: space-between;
+				padding: 18px 30px;
+				gap: 25px;
+			}
+			
+			#megaHider {
+				height: fit-content;
+				max-height: 0%;
+				display:block;
+				padding-top:80px;
+			
+				z-index: 10;
+				position: absolute;
+				top: 0px;
+				left: 0px;
+				overflow: hidden;
+				width: 100%;
+				background-color: white;
+				
+				transition: all 1.3s ease-out;
+			
+			}
+			
+			#megaHider:target {
+				top: 0px;
+				padding-top:80px;
+				position: absolute;
+				overflow: hidden;
+				height: fit-content;
+				max-height: 100%;
+				box-shadow: 2px 2px 3px 0px rgb(0 0 0 / 15%);
+				transition: all 1.3s ease-in;
+				z-index:10;
+			}
+			
+			h5.navHeading {
+				font-weight: 100;
+				color: var(--reflex-blue);
+				border-bottom: 2.5px solid var(--michelob-red);
+				text-transform: uppercase;
+				padding-bottom: 10px;
+				margin-bottom: 13px;
+			}
+			
+			
+			
+			a.button {
+				padding: 10px;
+				text-align: center;
+				background-color: var(--michelob-blue);
+				color:white;
+			}
+			
+			a.red.button {
+				background-color: var(--michelob-red);
+			}
+			
+			a.inverted.button {
+				background-color: transparent;
+				color: white;
+				border: 1.5px solid white;
+			}
+			
+			.menuSection li, .menuSection li a {
+				padding: 5px 0px;
+				color: #747474;
+			}
+			.column.gapUp {
+				gap: 20px;
+			}
+			.menuAd {
+				background-image: url('../img/navImage.png');
+				display: flex;
+				flex-direction: column;
+				background-repeat: no-repeat;
+				align-items: center;
+				width: 300px;
+				min-width: 300px;
+				height: 300px;
+				min-height: 300px;
+			}
+			
+			.ad {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+			}
+			
+			h5.blue{
+				color: var(--reflex-blue);
+				text-align: center;
+			}
+			
+			.ad h5{
+				text-align: center;
+			}
+			
+			.sub-nav li {
+				font-weight: 100;
+				
+			}
+			
+			.em {
+				font-weight: bold;
+			}
+			
+			.footer {
+				font-family: 'IBM Plex Sans','Ubuntu','Josefin Sans', sans-serif;
+				background-color: var(--reflex-blue);
+				display: flex;
+				flex-direction: row;
+				color: white;
+				justify-content: space-between;
+				padding: 60px 13px 80px;
+			}
+			
+			
+			.footer b {
+				font-family: "Josefin Sans", sans-serif;
+				font-weight: 800;
+				font-size: 22px;
+				font-weight: bold;
+				
+			}
+			
+			.footer p, .footer a , .footer li{
+				font-weight: 300;
+				font-size: 16px;
+				color: white;
+			}
+			
+			
+			.footer .circle i {
+				font-size: 30px;
+				color: var(--reflex-blue);
+				padding-left: 0x;
+			}
+			.stackLogo {
+				width: 175px;
+				height: 120px;
+			}
+			.circle{
+				border-radius: 50%;
+				width: 50px;
+				height: 50px;
+				background-color: white;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				margin-right: 10px;
+			}
+			
+			
+			
+			.row {
+				display: flex;
+				flex-direction: row;
+				justify-content: space-between;
+				padding-bottom: 15px;
+			}
+			
+			.column {
+				display: flex;
+				flex-direction: column;
+				flex-grow: 1;
+				gap: 13px;
+			}
+			
+			.bottom {
+				justify-content: end;
+				padding: 0px 20px;
+			}
+			
+			label {
+				font-size: 18px;
+				font-weight: bold;
+			}
+			
+			.mainSlot {
+				display: block;
+				width: 100%;
+				padding: 30px;
+				min-height: 300px;
+				z-index: 5
+			}
+			
+			.topper {
+				border-top: white solid 1px;
+				padding-top: 20px;
+			}
+			
+			.center {
+				align-items:center;
+			}
+			
+			.social {
+				display: flex;
+				flex-direction: row;
+				justify-content: space-between;
+				align-items: center;
+			}
+			
+			.social i {
+				font-size: 30px;
+				color: white;
+				padding-right: 10px;
+			}
+			
+			.i {
+			font-style: italic;
+			font-size: 14px;
+			}
+			
+			.builder-columns {
+				gap: 20px;
+			}
+			
+			@media (max-width: 768px) {
+				.builder-columns {
+					flex-direction: column !important;
+				}
+			}
 	
+		</style>
 	</head>
 	<body>
 		<div>%svelte.body%</div>
